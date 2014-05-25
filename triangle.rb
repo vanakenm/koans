@@ -14,7 +14,10 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  raise TriangleError if a <= 0 || b <= 0 || c <= 0 || a+b+c - [a,b,c].max <= [a,b,c].max
+  return :equilateral if a == b && b == c
+  return :isosceles if a == b || b == c || a == c
+  return :scalene
 end
 
 # Error class used in part 2.  No need to change this code.
